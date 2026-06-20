@@ -129,12 +129,12 @@ export function SplitControls({
             {selectedPages.length} of {maxPages} selected
           </span>
         </div>
-        <div className="flex gap-2">
+        <div className="flex flex-col sm:flex-row gap-2">
           <Button
             variant="outline"
             size="sm"
             onClick={handleSelectAll}
-            className="w-full text-xs font-semibold"
+            className="flex-1 w-full text-xs font-semibold"
           >
             <ListChecks className="size-3.5 mr-1" />
             Select All
@@ -144,7 +144,7 @@ export function SplitControls({
             size="sm"
             onClick={handleClearSelection}
             disabled={selectedPages.length === 0}
-            className="w-full text-xs font-semibold text-muted-foreground"
+            className="flex-1 w-full text-xs font-semibold text-muted-foreground"
           >
             <Trash2 className="size-3.5 mr-1" />
             Clear
