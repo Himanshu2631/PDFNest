@@ -22,6 +22,7 @@ import {
   RefreshCw,
   Loader2,
   FileCheck,
+  ClipboardPaste,
   ShieldAlert,
   ArrowRight
 } from 'lucide-react';
@@ -273,6 +274,12 @@ export default function WorkspacePage() {
           <p className="text-xs sm:text-sm text-muted-foreground max-w-xl leading-relaxed">
             Merge, split, and organize PDF files directly in your browser. No server uploads, complete privacy, and instant processing.
           </p>
+
+          {/* Paste Helper Banner */}
+          <div className="inline-flex items-center gap-1.5 text-[10px] text-muted-foreground/80 font-mono bg-muted/30 px-2 py-0.5 rounded border border-border/40 select-none">
+            <ClipboardPaste className="size-3 text-muted-foreground" />
+            <span>Tip: Drop your PDFs here for instant processing</span>
+          </div>
         </div>
 
         {/* Tool Selection (Segmented Tabs Switcher) */}
