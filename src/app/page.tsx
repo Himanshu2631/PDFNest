@@ -333,7 +333,7 @@ export default function WorkspacePage() {
               {/* Left Canvas: Workspace Queue */}
               <div className="md:col-span-2 space-y-4">
                 <div className="flex items-center justify-between border-b border-border pb-2">
-                  <h2 className="text-[11px] font-bold tracking-wider text-muted-foreground uppercase">
+                  <h2 className="text-[11px] font-bold tracking-wider text-foreground uppercase">
                     Queue list
                   </h2>
                   <span className="text-[10px] text-muted-foreground font-mono">
@@ -361,7 +361,7 @@ export default function WorkspacePage() {
               <div className="border border-border bg-background/50 rounded-xl p-5 space-y-5">
                 <div className="flex items-center gap-2 border-b border-border pb-3">
                   <FileCheck className="size-4 text-muted-foreground" />
-                  <h3 className="font-semibold text-xs uppercase tracking-wider text-muted-foreground">
+                  <h3 className="font-bold text-xs uppercase tracking-wider text-foreground">
                     Action Dashboard
                   </h3>
                 </div>
@@ -463,7 +463,7 @@ export default function WorkspacePage() {
               <div className="md:col-span-2 space-y-4">
                 <div className="flex items-center justify-between border-b border-border pb-2">
                   <div className="flex items-center gap-2 min-w-0">
-                    <h2 className="text-[11px] font-bold tracking-wider text-muted-foreground uppercase shrink-0">
+                    <h2 className="text-[11px] font-bold tracking-wider text-foreground uppercase shrink-0">
                       Page Extractor
                     </h2>
                     <span className="text-[10px] font-mono text-muted-foreground bg-muted px-2 py-0.5 rounded border border-border truncate max-w-[200px]" title={splitFile.name}>

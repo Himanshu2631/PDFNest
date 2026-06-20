@@ -25,7 +25,7 @@ export function PageGrid({ pages, selectedPages, onTogglePage }: PageGridProps) 
             )}
           >
             {/* Page Canvas Preview */}
-            <div className="relative w-full aspect-[1/1.414] rounded border border-border/60 bg-muted overflow-hidden flex items-center justify-center">
+            <div className="relative w-full aspect-[1/1.414] rounded border border-border bg-muted overflow-hidden flex items-center justify-center">
               <img
                 src={page.dataUrl}
                 alt={`Page ${page.pageNumber}`}

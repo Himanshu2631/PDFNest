@@ -116,7 +116,7 @@ export function SplitControls({
     <div className="border border-border bg-background/50 rounded-xl p-5 space-y-5">
       <div className="flex items-center gap-2 border-b border-border pb-3.5">
         <Settings className="size-4 text-muted-foreground" />
-        <h3 className="font-semibold text-xs uppercase tracking-wider text-muted-foreground">
+        <h3 className="font-bold text-xs uppercase tracking-wider text-foreground">
           Extraction Settings
         </h3>
       </div>
