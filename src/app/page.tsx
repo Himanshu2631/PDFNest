@@ -13,12 +13,12 @@ import { renderAllPdfPages, RenderedPage } from '@/lib/pdf-render';
 import { formatBytes } from '@/components/merge/merge-item';
 import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';
-import { 
-  Files, 
-  Scissors, 
-  Plus, 
-  Trash2, 
-  Download, 
+import {
+  Files,
+  Scissors,
+  Plus,
+  Trash2,
+  Download,
   RefreshCw,
   Loader2,
   FileCheck,
@@ -124,7 +124,7 @@ export default function WorkspacePage() {
     try {
       const order = queue.map((_, index) => index);
       const data = await mergePdfFiles(queue.map((item) => item.file), order);
-      
+
       // Trigger download
       const blob = new Blob([data as any], { type: 'application/pdf' });
       const url = URL.createObjectURL(blob);
@@ -183,7 +183,7 @@ export default function WorkspacePage() {
       if (!e.clipboardData) return;
       const files = Array.from(e.clipboardData.files);
       const pdfs = files.filter(f => f.type === 'application/pdf' || f.name.endsWith('.pdf'));
-      
+
       if (pdfs.length > 0) {
         if (mode === 'merge') {
           addFiles(pdfs);
@@ -194,7 +194,7 @@ export default function WorkspacePage() {
         }
       }
     };
-    
+
     window.addEventListener('paste', handlePaste);
     return () => window.removeEventListener('paste', handlePaste);
   }, [mode, addFiles, onSplitFileDrop]);
@@ -203,7 +203,7 @@ export default function WorkspacePage() {
   const handleDragEnter = (e: DragEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    
+
     // Check if dragging files
     if (e.dataTransfer && e.dataTransfer.types.includes('Files')) {
       dragCounter.current++;
@@ -214,7 +214,7 @@ export default function WorkspacePage() {
   const handleDragLeave = (e: DragEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    
+
     if (e.dataTransfer && e.dataTransfer.types.includes('Files')) {
       dragCounter.current--;
       if (dragCounter.current === 0) {
@@ -231,7 +231,7 @@ export default function WorkspacePage() {
   const handleDrop = (e: DragEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    
+
     setIsGlobalDragging(false);
     dragCounter.current = 0;
 
@@ -264,7 +264,7 @@ export default function WorkspacePage() {
       <Header />
 
       <main className="flex-1 max-w-6xl w-full mx-auto py-10 px-4 md:px-8">
-        
+
         {/* Navigation & Product Introduction */}
         <div className="space-y-2 mb-8 border-b border-border pb-6">
           <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
@@ -272,9 +272,9 @@ export default function WorkspacePage() {
             <span className="text-xs text-muted-foreground font-mono">Environment: Client-Side Sandbox</span>
           </div>
           <p className="text-xs sm:text-sm text-muted-foreground max-w-xl leading-relaxed">
-            Manipulate, merge, and split PDF documents locally inside your browser cache. Zero server upload, maximum confidentiality, and instant processing speeds.
+            Merge, split, and organize PDF files directly in your browser. No server uploads, complete privacy, and instant processing.
           </p>
-          
+
           {/* Paste Helper Banner */}
           <div className="inline-flex items-center gap-1.5 text-[10px] text-muted-foreground/80 font-mono bg-muted/30 px-2 py-0.5 rounded border border-border/40 select-none">
             <ClipboardPaste className="size-3 text-muted-foreground" />
@@ -329,7 +329,7 @@ export default function WorkspacePage() {
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
-              
+
               {/* Left Canvas: Workspace Queue */}
               <div className="md:col-span-2 space-y-4">
                 <div className="flex items-center justify-between border-b border-border pb-2">
@@ -402,7 +402,7 @@ export default function WorkspacePage() {
                       </>
                     )}
                   </Button>
-                  
+
                   <div className="flex gap-2">
                     <Dropzone onFilesDropped={addFiles} className="border-none bg-transparent p-0 flex-1">
                       <Button variant="outline" size="sm" className="w-full text-xs font-semibold">
@@ -458,7 +458,7 @@ export default function WorkspacePage() {
           ) : (
             /* Split Page Grid and Settings */
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
-              
+
               {/* Left Canvas: Custom Vector Page Grid */}
               <div className="md:col-span-2 space-y-4">
                 <div className="flex items-center justify-between border-b border-border pb-2">
