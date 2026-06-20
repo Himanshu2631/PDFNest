@@ -5,7 +5,7 @@ export function Footer() {
   return (
     <footer className="w-full border-t border-border bg-background py-6 px-4 md:px-8 mt-auto">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-        
+
         {/* Left Side: Developer Info */}
         <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-6 text-sm text-muted-foreground">
           <div className="font-medium text-foreground">Himanshu Sengar</div>
@@ -29,7 +29,7 @@ export function Footer() {
               GitHub
             </a>
             <a
-              href="https://digitalheroesco.com"
+              href="https://himanshusengar.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1 hover:text-foreground transition-colors"
@@ -51,7 +51,7 @@ export function Footer() {
             Built for Digital Heroes
           </a>
         </div>
-        
+
       </div>
     </footer>
   );
