@@ -1,21 +1,39 @@
+"use client";
+
 import React, { useState, useEffect } from 'react';
 import { Layers, ShieldCheck, Sun, Moon } from 'lucide-react';
 import { useTheme } from 'next-themes';
+import Link from 'next/link';
+import { usePathname, useRouter } from 'next/navigation';
 
 export function Header() {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const pathname = usePathname();
+  const router = useRouter();
 
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  const handleLogoClick = (e: React.MouseEvent) => {
+    if (pathname === '/') {
+      e.preventDefault();
+      window.location.reload();
+    }
+  };
 
   return (
     <header className="w-full border-b border-border bg-background/50 backdrop-blur-md sticky top-0 z-50 px-4 md:px-8 py-3.5">
       <div className="max-w-6xl mx-auto flex items-center justify-between">
 
         {/* Logo and Brand */}
-        <div className="flex items-center gap-2.5 select-none">
+        <Link
+          href="/"
+          onClick={handleLogoClick}
+          aria-label="Go to homepage"
+          className="flex items-center gap-2.5 select-none hover:opacity-80 active:scale-[0.98] transition-all cursor-pointer"
+        >
           <div className="flex size-7 items-center justify-center rounded-md bg-foreground text-background">
             <Layers className="size-4" strokeWidth={2.5} />
           </div>
@@ -23,7 +41,7 @@ export function Header() {
             <span className="font-bold text-base tracking-tight">PDFNest</span>
             <span className="text-[10px] font-mono text-muted-foreground bg-muted px-1.5 py-0.5 rounded border border-border">v1.0.0</span>
           </div>
-        </div>
+        </Link>
 
         {/* Right Controls */}
         <div className="flex items-center gap-3">
